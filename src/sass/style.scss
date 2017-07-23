@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'mixin';
+
+body {
+  background-color: $bg;
+  @include bg-img;
+  @include fontFamily;
+}
+
+.btn-floating {
+  position: relative;
+  left: 30px;
+  bottom: 57px;
+}
+
+.form {
+  margin-top: 15px;
+  .input-field input::placeholder {
+    color: $grey;
+    opacity: 0.6;
+  }
+}
+
+.list-items {
+  font-size: 1.1em;
+  padding: 0;
+  perspective: 500px;
+  .item {
+    background: #fff;
+    @include boxShadow;
+    display: flex;
+    margin-bottom: 10px;
+    max-width: 100%;
+    padding: 10px;
+    transition: 0.6s;
+    span:first-child {
+      width: 100%;
+    }
+    .check {
+      @include btn-style;
+      font-size: 16px;
+      color: $green;
+    }
+    .trash {
+      @include btn-style;
+      font-size: 14px;
+    }
+  }
+  .flip {
+    background: $flip-bg;
+    color: $flipTextColor;
+    transform: rotateX(360deg);
+    span {
+      text-decoration: line-through;
+    }
+  }
+}
